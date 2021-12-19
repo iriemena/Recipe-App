@@ -38,9 +38,10 @@ async function searchByTerm(term) {
 
 function addMeal(mealData) {
   const mealDIV = document.createElement("div");
+  // mealDIV.classList = "meal-div";
 
   mealDIV.innerHTML = `
-    <h3 style="font-size: 14px">Recipe of the day</h3>
+   
     <img id="image"
     src=${mealData.strMealThumb}
     alt=${mealData.strMeal} 
@@ -48,6 +49,8 @@ function addMeal(mealData) {
     <div class="meal-dtl">
     <p style="margin-left: 5px">${mealData.strMeal} <span><i class="fa fa-heart" aria-hidden="true"></i></span></p>
     </div>
+     <hr />
+  
 `;
 
   const mealImg = mealDIV.querySelector("img");
