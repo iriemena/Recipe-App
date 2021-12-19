@@ -33,6 +33,17 @@ body {
   border-radius: 5px;
   box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.1);
 }
+.container h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: rgb(14, 14, 15);
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+}
 .fav-meal {
   background-color: rgb(174, 193, 199);
   padding: 0;
@@ -45,7 +56,25 @@ ul {
   font-weight: bold;
   padding: 0;
   margin: 0;
+  cursor: pointer;
 }
+
+.fav-meal li {
+  position: relative;
+}
+.clear {
+  position: absolute;
+  margin-left: 10px;
+  color: red;
+  right: 0.5rem;
+  opacity: 0;
+  font-weight: 200;
+  font-size: 1.3rem;
+}
+li:hover .clear {
+  opacity: 1;
+}
+
 ul p {
   text-align: justify;
   font-size: 0.6rem;
@@ -74,7 +103,7 @@ ul li img {
 .active {
   color: blueviolet;
 }
-.modal {
+.popup-container {
   position: fixed;
   top: 0;
   right: 0;
@@ -84,22 +113,25 @@ ul li img {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
-.meal-info {
+.popup {
   background-color: #fff;
   width: 100%;
-  max-width: 400px;
-  height: 90vh;
-  position: relative;
-  overflow: scroll;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow: auto;
   padding: 15px;
+  border-radius: 5px;
+  position: relative;
 }
-.meal-info .fa {
+.popup-close {
   position: absolute;
   right: 1rem;
   top: 1rem;
   cursor: pointer;
 }
+
 .meal-info h2 {
   color: royalblue;
   text-align: center;
@@ -113,8 +145,25 @@ ul li img {
   margin: 15px 0 5px;
   color: blue;
   font-size: 1.2rem;
+  text-decoration: underline;
+}
+#youtube {
+  background-color: rgb(35, 35, 185);
+  padding: 10px;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  display: grid;
+  place-content: center;
+}
+#youtube:hover {
+  background-color: rgb(31, 31, 99);
 }
 
+/* .popup-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+} */
 .hidden {
   display: none;
 }

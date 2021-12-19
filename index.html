@@ -26,18 +26,42 @@
     <div class="container">
       <div class="header">
         <h2>Meal Recipe</h2>
-        <input type="text" /><button>
+        <!-- <input id="search" type="text" /><button id="search-btn">
           <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
+        </button> -->
+
+        <div class="input-group">
+          <div class="form-outline">
+            <input
+              type="search"
+              id="search"
+              class="form-control"
+              placeholder="Search..."
+            />
+          </div>
+          <button type="button" class="btn btn-primary" id="search-btn">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
+
       <hr />
-      <div  class="fav-meal">
-        
+      <h6>Favourite Meals</h6>
+      <div class="fav-container">
+        <ul class="fav-meal"></ul>
       </div>
       <hr />
       <div class="random-meal"></div>
     </div>
-    <div class="modal hidden"></div>
+    <div class="popup-container hidden" id="popup-container">
+      <div class="popup">
+        <div class="popup-close">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div class="meal-info"></div>
+      </div>
+    </div>
+
     <!-- Javascript -->
     <script src="app.js"></script>
   </body>
