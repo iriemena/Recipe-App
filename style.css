@@ -46,9 +46,6 @@ body {
   justify-content: center;
 }
 
-.form-control:hover {
-  color: #fff !important;
-}
 .fav-meal {
   background-color: rgb(174, 193, 199);
   padding: 0;
