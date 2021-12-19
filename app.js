@@ -9,7 +9,6 @@ const searchBtn = document.getElementById("search-btn");
 getRandomMeal();
 fetchFavMeal();
 
-// let interval = setInterval(getRandomMeal, 10000);
 function getRandomMeal() {
   fetch("https://www.themealdb.com/api/json/v1/1/random.php")
     .then((res) => res.json())
@@ -118,8 +117,6 @@ function addFavMeal(mealId) {
   const clear = favLI.querySelector(".clear");
 
   clear.addEventListener("click", (e) => {
-    popupContainer.innerHTML = "";
-    popupContainer.style.opacity = 0;
     removeLocalMeal(mealId.idMeal);
     fetchFavMeal();
   });
