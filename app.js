@@ -14,7 +14,7 @@ function getRandomMeal() {
     .then((res) => res.json())
     .then((data) => {
       const meal = data.meals[0];
-      addMeal(meal);
+      addMeal(meal, true);
     });
 }
 
@@ -36,18 +36,24 @@ async function searchByTerm(term) {
   return meal;
 }
 
-function addMeal(mealData) {
+function addMeal(mealData, recipeOfTheDay = false) {
   const mealDIV = document.createElement("div");
   // mealDIV.classList = "meal-div";
 
   mealDIV.innerHTML = `
-   
+    ${
+      recipeOfTheDay
+        ? `<h3 style="font-size: 14px; margin: 0;">Recipe of the day</h3>`
+        : ""
+    }
     <img id="image"
     src=${mealData.strMealThumb}
     alt=${mealData.strMeal} 
     />
     <div class="meal-dtl">
-    <p style="margin-left: 5px">${mealData.strMeal} <span><i class="fa fa-heart" aria-hidden="true"></i></span></p>
+    <p style="margin-left: 5px">${
+      mealData.strMeal
+    } <span><i class="fa fa-heart" aria-hidden="true"></i></span></p>
     </div>
      <hr />
   
